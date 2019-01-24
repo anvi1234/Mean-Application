@@ -1,0 +1,108 @@
+<style>
+
+  body{
+    background-image: url("./assets/download1.jpeg");
+    background-size: 1500px 1800px;
+    background-repeat:no-repeat;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  li {
+    float: center;
+    font-size: 30px;
+  }
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  .login{
+    text-align: center;
+    margin-bottom:5px;
+    padding-bottom:80px;
+    padding-left:40%;
+    padding-top:80px;
+    color:white;
+  }
+  #registeration{
+    background-color:#051019;
+    margin-bottom: 5px;
+    width:60%;
+    height:40%;
+    padding-bottom: 60px;
+    padding-top:60px;
+    opacity:0.9;
+    margin-bottom: 5px;
+     }
+  .login input{
+    margin-bottom:20px;
+  }
+  .login input[type="submit"]:hover{
+    color:red;
+    background-color:black;
+      cursor:pointer;
+      
+    }
+</style>
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  <body>
+        <ul>
+            <li><a class="active" href="#home">{{title}}</a></li>
+          </ul>
+          <div class="login">
+        
+      <form  #f="ngForm" id="registeration" (ngSubmit)="saveData()">
+      <div class="navbar navbar reverse"></div>
+      
+      
+        <span>First Name:</span> &nbsp;
+        <input type="text" [(ngModel)]="user.uFirstName" #firstname="ngModel" name="firstname" required autofocus><br>
+        <div *ngIf="firstname.errors">
+          <span *ngIf="firstname.errors.required"> Please Fill First name</span>
+        </div>
+       <span> Last Name:</span> &nbsp;
+        <input type="text" [(ngModel)]="user.uLastName" #lastname="ngModel"  name="lastname"Required><br>
+         Email:
+        <input id="email" name="email" pattern= "./@gmail.com" #email="ngModel" [ngModel]="user.uemailId"><br>
+         Paaword:
+         <input id="password" name="password" #password="ngModel" [ngModel]="user.uPassword" required><br>
+        <input type="submit"  value="submit">
+        <button type="button" (click)="clearRecord()">Cancel</button>
+       
+
+      </form>
+      
+    </div>
+        </body>
+    
+
+    
